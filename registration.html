@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: white;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 15px;
+}
+
+form {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group > label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.radio-group {
+    display: flex;
+    gap: 25px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    color: #444;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #555;
+}
+
+.terms input {
+    width: 16px;
+    height: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #f5f5f5;
+    color: #777;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>College Event Registration</h1>
+            <p>Register now and be a part of the event!</p>
+        </div>
+
+        <form>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label>College Name</label>
+                <input type="text" placeholder="Enter your college name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Department</label>
+                <select required>
+                    <option value="">Select Department</option>
+                    <option>B.Sc IT</option>
+                    <option>BCA</option>
+                    <option>B.Sc Computer Science</option>
+                    <option>B.Tech</option>
+                    <option>B.E</option>
+                    <option>MCA</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Year</label>
+                <select required>
+                    <option value="">Select Year</option>
+                    <option>1st Year</option>
+                    <option>2nd Year</option>
+                    <option>3rd Year</option>
+                    <option>4th Year</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Select Event</label>
+                <select required>
+                    <option value="">Choose an Event</option>
+                    <option>Paper Presentation</option>
+                    <option>Web Designing</option>
+                    <option>Quiz Competition</option>
+                    <option>Debugging</option>
+                    <option>Poster Designing</option>
+                    <option>Treasure Hunt</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" required> Male
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender"> Female
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender"> Other
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Message / Special Requirements</label>
+                <textarea rows="4" placeholder="Enter your message"></textarea>
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" required>
+                <span>I agree to the event rules and regulations.</span>
+            </div>
+
+            <button type="submit">Register Now</button>
+
+        </form>
+
+        <div class="footer">
+            <p>© 2026 College Event | All Rights Reserved</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
